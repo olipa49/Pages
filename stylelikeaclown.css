@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('https://images.wallpaperscraft.com/image/single/paper_texture_cells_55327_1920x1080.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px 5% 0px 2%;
+}
+
+
+.borderus {
+    border-style: solid;
+    border-radius: 35px;
+    border-width: 7px;
+    padding: 8.5px;
+    background-color: beige;
+}
+/*.borderus:hover {
+    transform: scale(1.01);
+}*/
+.shadowus {
+    box-shadow: 20px 15px 15px rgba(182, 182, 182, 0.7);
+    transition: all 0.5s ease-in-out;
+}
+.shadowus:hover {
+    box-shadow: 20px 15px 15px rgba(128, 128, 128, 0.7);
+    transition: all 0.5s ease-in-out;
+}
+
+.left-button {
+    border-width: 7px 7px 7px 7px;
+    border-radius: 35px;
+    margin: -7px 0px -7px -7px;
+}
+.right-button {
+    border-width: 7px 7px 7px 0px;
+    border-radius: 0px 35px 35px 0px;
+    margin: -7px -7px -7px 0px;
+}
+.sokr_knopka {
+    background-color: beige;
+    border-style: solid;
+    padding: 8.5px;
+    width: 100%;
+}
+.sokr-container {
+    padding: 0px;
+}
+.all-button {
+    width:80px;
+    height:80px;
+    /*border-radius: 50%;*/
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: 100%;
+    background-color: rgba(1, 4, 88, 0);
+    border-width: 0px;
+    filter: drop-shadow(10px 10px 4px rgba(182, 182, 182, 0.7));
+    transition: filter, margin-top 0.5s ease-in-out;
+}
+.all-button:hover {
+    /*scale: 110%;
+    box-shadow: 10px 10px 7px rgba(182, 182, 182, 0.7);*/
+    filter: drop-shadow(10px 10px 4px rgba(128, 128, 128, 0.7));
+    margin-top: -10px;
+    transition: filter, margin-top 0.5s ease-in-out;
+}
+
+.middle-button {
+    background-color: beige;
+}
+
+#button1 {
+    background-image: url('sdvg/Speaker24Regular.svg');
+    
+}
+#button1:hover {
+    background-image: url('sdvg/Speaker24Filled.svg');
+}
+#button2 {
+    background-image: url('sdvg/Folder24Regular.svg');
+}
+#button2:hover {
+    background-image: url('sdvg/Folder24Filled.svg');
+}
+#button3 {
+    background-image: url('sdvg/SlideMicrophone24Regular.svg');
+}
+#button3:hover {
+    background-image: url('sdvg/SlideMicrophone24Filled.svg');
+}
+#button4 {
+    background-image: url('sdvg/XCircle.svg');
+}
+#button4:hover {
+    background-image: url('sdvg/XCircle\ \(1\).svg');
+}
+#button5 {
+    background-image: url('sdvg/Copy24Regular.svg');
+}
+#button5:hover {
+    background-image: url('sdvg/Copy24Filled.svg');
+}
+#button6 {
+    background-image: url('sdvg/Speaker24Regular.svg');
+}
+#button6:hover {
+    background-image: url('sdvg/Speaker24Filled.svg');
+}
+#button7 {
+    background-image: url('sdvg/Copy24Regular.svg');
+}
+#button7:hover {
+    background-image: url('sdvg/Copy24Filled.svg');
+}
+#button8 {
+    background-image: url('sdvg/Notepad24Regular.svg');
+}
+#button8:hover {
+    background-image: url('sdvg/Notepad24Filled.svg');
+}
+
+
+.text {
+    height: 600px;
+    width: 350px;
+    outline: 0;
+    resize: none;
+    font-size: 20px;
+}
+.text::-webkit-scrollbar{
+    width: 20px;
+    cursor: default;
+}
+.text::-webkit-scrollbar-thumb{
+    border-radius: 100px;
+    border: 3px solid;
+    cursor: default;
+    background-color: white;
+}
+#left::-webkit-scrollbar-thumb{
+    border-color: rgb(0, 223, 223);
+}
+#right::-webkit-scrollbar-thumb{
+    border-color: limegreen;
+}
+#left{
+    border-color: aqua;
+}
+#right{
+    border-color: lawngreen;
+}
+#number {
+    outline: 0;
+    resize: none;
+    background-color: beige;
+    font-size: 20px;
+}
+
+
+.hh {
+    text-align: center;
+}
+.shapka {
+    margin-top: 0px;
+    border-top-width: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+#sent {
+    width: 70px;
+    background-image: url('sdvg/ArrowCircleRight24Filled.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+/*.no-shadow {
+    box-shadow: 20px 0px 15px rgba(182, 182, 182, 0.7);
+}
+.no-shadow:hover {
+    box-shadow: 20px 0px 15px rgba(128, 128, 128, 0.7);
+}*/
