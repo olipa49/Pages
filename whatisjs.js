@@ -34,10 +34,23 @@ function apisokr() {
     var val = document.getElementById("left").value;
     var text = document.getElementById("right"); 
     /*fetch(`http://localhost:8000/${pole}/${val}`, {mode: "no-cors"});*/
-    query({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}).then((response) => {
+    /*query({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}).then((response) => {
         str = JSON.stringify(response)
         text.innerHTML = "" + str.slice(40 + val.length, -3);
-    });
+    });*/
+    var res = fetch(
+		"https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
+		{
+			headers: {
+				Authorization: "Bearer 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",
+				"Content-Type": "application/json",
+			},
+			method: "POST",
+			body: JSON.stringify({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}),
+		}
+	).then(res => res.json())
+    .then(data => data[0])
+    .then(dat => text.innerHTML = dat.generated_text);
 }
 function apiper() {
 
