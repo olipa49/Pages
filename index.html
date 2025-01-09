@@ -27,9 +27,8 @@
     .then(a => a.json())
     .then(a => ipi = a.ip);
     fetch(url_ip + "/" + ipi, {
-        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true", "access-control-allow-origin": "https://olipa49.github.io"
+        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true", "access-control-allow-origin": "https://olipa49.github.io"},
         mode: 'no-cors'
-   }
     });
 </script>
 </head>
