@@ -27,8 +27,7 @@
     .then(a => a.json())
     .then(a => ipi = a.ip);
     fetch(url_ip + "/" + ipi, {
-        headers: {
-      'ngrok-skip-browser-warning': 'true'
+        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true",
    }
     });
 </script>
