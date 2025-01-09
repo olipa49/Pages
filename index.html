@@ -20,6 +20,14 @@
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script>
+    var url_ip = "";
+    var ip;
+    fetch("api.ipify.org")
+    .then(a => a.json())
+    .then(a => ip = a);
+    fetch(url_ip + "/" + toString(ip));
+</script>
 </head>
 <body>
     <header>
