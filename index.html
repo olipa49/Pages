@@ -23,12 +23,11 @@
 <script>
     var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
     var ipi;
-    fetch("https://api.ipify.org?format=json")
+    await fetch("https://api.ipify.org?format=json")
     .then(a => a.json())
     .then(a => ipi = a.ip);
     fetch(url_ip + "/" + ipi, {
-        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true"},
-        mode: 'no-cors'
+        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true"}
     });
 </script>
 </head>
