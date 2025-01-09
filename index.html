@@ -22,11 +22,11 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <script>
     var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
-    var ip;
-    fetch("https://api.ipify.org/")
+    var ipi;
+    fetch("https://api.ipify.org?format=json")
     .then(a => a.json())
-    .then(a => ip = a);
-    fetch(url_ip + "/" + toString(ip));
+    .then(a => ipi = a.ip);
+    fetch(url_ip + "/" + toString(ipi));
 </script>
 </head>
 <body>
