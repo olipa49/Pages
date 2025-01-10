@@ -20,16 +20,6 @@
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<script>
-    var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
-    var ipi;
-    fetch("https://api.ipify.org?format=json")
-    .then(a => a.json())
-    .then(a => ipi = a.ip);
-    fetch(url_ip + "/ip/" + ipi, {
-        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true"}
-    });
-</script>
 </head>
 <body>
     <header>
