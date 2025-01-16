@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <link rel="stylesheet" href="stylelikeaclown.css">
     <link rel="stylesheet" href="containers.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="boba.css">
+    <link rel="shortcut icon" href="1488.ico" type="image/x-icon">
+    <title>ИИ-ассистент</title>
+
+
     <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
@@ -38,17 +43,31 @@
             </div>
         </div>
 
+
+        <!-- Серединка -->
         <div class="column-container" id="middle">
             <div class="line-container shadowus middle-button borderus sokr-container">
                 <button class="left-button sokr_knopka">
                     <h2>Сократить текст на <input oninput="sync1()" class="borderus" type="number" id="number" min=10 max=90 value="52" readonly>  %</h2><br>
                     <input oninput="sync2()" type="range" id="range" step="5" min=10 max=90 value="52">
                 </button>
+
                 <button class="right-button sokr_knopka" id="sent" onclick="apisokr()">
                 </button>
             </div>
+
             <button class="middle-button borderus shadowus" onclick="apiper()"><h2>Перефразировать</h2></button>
+            <div class="borderus shadowus">
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()"><h2 class="dropbtn" id="modelname">Выпадающий</h2></button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <div class="mod"><div class="circle" id="cir1"></div><h3 style="padding-inline: 10px;">MODEL1</h3><button onclick="set_mod1()" class="button" id="m1">SET</button></div>
+                      <div class="mod"><div class="circle" id="cir2"></div><h3 style="padding-inline: 10px;">MODEL2</h3><button onclick="set_mod2()" class="button" id="m2">SET</button></div>
+                    </div>
+                  </div>
+            </div>
         </div>
+
 
         <div class="column-container">
             <h2 class="hh"></h2>
@@ -61,5 +80,6 @@
         </div>
     </div>
     <script src="whatisjs.js"></script>
+    <script src="sss.js"></script>
 </body>
 </html>
