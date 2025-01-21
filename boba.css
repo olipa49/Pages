@@ -10,6 +10,8 @@
     border-color: rgba(207, 194, 194, 0);*/
     cursor: pointer;
     border: none;
+    background-color: beige;
+    width: 100%;
   } 
   
   /* Кнопка выпадающего меню при наведении и фокусировке 
@@ -19,23 +21,35 @@
   
   /* Выпадающее содержимое (скрыто по умолчанию) */
   .dropdown-content {
-    display: none;
-    /*position: absolute;
-    background-color: #f1f1f1;*/
+    /*display: none;
+    position: absolute;
+    background-color: #f1f1f1;
     min-width: 160px;
-    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;*/
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
   }
   
-  
-  /* Контейнер <div> — необходим для размещения выпадающего содержимого */
-  .dropdown {
-    text-align: center;
-  }
   
   /* Показать выпадающее меню (использовать JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
-  .show {display:block;}
+  @supports (interpolate-size: allow-keywords) {
+    * {
+      interpolate-size: allow-keywords;
+    }
+    .show {
+    max-height: max-content;
+    transition: max-height 1s;
+    }
+  }
 
+  @supports not (interpolate-size: allow-keywords) {
+    .show {
+    max-height: 200px;
+    transition: max-height 1s;
+    }
+  }
   .mod{
     display: flex;
     justify-content: center;
