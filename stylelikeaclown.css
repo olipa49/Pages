@@ -130,6 +130,7 @@ body {
     outline: 0;
     resize: none;
     font-size: 20px;
+    margin-top: 20px;
 }
 .text::-webkit-scrollbar{
     width: 20px;
@@ -164,12 +165,25 @@ body {
 
 .hh {
     text-align: center;
+    margin: 0px;
 }
 .shapka {
     margin-top: 0px;
     border-top-width: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+    transition: 600ms ease-in-out;
+}
+.shapka:hover {
+    padding-top: 20px;
+}
+.header-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-line-img {
+    width: 48px;
 }
 #sent {
     width: 70px;

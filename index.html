@@ -27,12 +27,18 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
 <body>
-    <header>
-        <h1 class="hh borderus shapka">ИИ-ассистент для учёбы</h1>
+    <header class="borderus shapka">
+        <div class="header-line">
+            <img class="header-line-img" src="sdvg\Menu.svg">
+            <h1 class="hh">ИИ-ассистент для учёбы</h1>
+            <img class="header-line-img" src="sdvg\RoundLogin.svg">
+        </div>
     </header>
+
+
+
     <div class="line-container">
         <div class="column-container">
-            <h2 class="hh"></h2>
             <textarea class="text borderus shadowus" id="left" placeholder="Введите текст..."></textarea>
             <div class="button-container">
                 <button class="all-button" id="button1" title="Озвучить текст" onclick="speakText1()"></button>
@@ -56,21 +62,22 @@
                 </button>
             </div>
 
+
             <button class="middle-button borderus shadowus" onclick="apiper()"><h2>Перефразировать</h2></button>
             <div class="borderus shadowus">
                 <div class="dropdown">
                     <button class="dropbtn" onclick="myFunction()"><h2 class="dropbtn" id="modelname">Выпадающий</h2></button>
                     <div id="myDropdown" class="dropdown-content">
-                      <div class="mod" onclick="set_mod1()"><div class="circle" id="cir1"></div><h3 style="padding-inline: 10px;">MODEL1</h3><button onclick="set_mod1()" class="button" id="m1">SET</button></div>
-                      <div class="mod" onclick="set_mod2()"><div class="circle" id="cir2"></div><h3 style="padding-inline: 10px;">MODEL2</h3><button onclick="set_mod2()" class="button" id="m2">SET</button></div>
+                      <div class="mod" onclick="set_mod1()"><div class="circle" id="cir1"></div><h3 style="padding-inline: 10px;">MODEL1</h3></div>
+                      <div class="mod" onclick="set_mod2()"><div class="circle" id="cir2"></div><h3 style="padding-inline: 10px;">MODEL2</h3></div>
                     </div>
                   </div>
             </div>
         </div>
 
 
+
         <div class="column-container">
-            <h2 class="hh"></h2>
             <textarea class="text borderus shadowus" id="right" readonly placeholder="Ответ ИИ..."></textarea>
             <div class="button-container">
                 <button class="all-button" id="button6" title="Озвучить текст" onclick="speakText2()"></button>
