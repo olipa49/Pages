@@ -2,7 +2,7 @@ set_mod1();
 /* Когда пользователь нажимает на кнопку, переключение между скрытием и отображением раскрывающегося содержимого */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
-  }
+}
   
   // Закрыть выпадающее меню, если пользователь щёлкает за его пределами
   window.onclick = function(event) {
@@ -43,3 +43,9 @@ function myFunction() {
     var modelnameh2 = document.getElementById("modelname");
     modelnameh2.innerHTML = `Модель: ${neromodel}`;
   }
+
+// Переключалка темы
+function squid_theme() {
+  document.querySelector("body").classList.toggle("light");
+  document.querySelector("body").classList.toggle("dark");
+}
