@@ -274,7 +274,7 @@ body.light {
 
 body.dark {
     --bg-main: black;
-    --bg-el: linear-gradient(90deg, #5540d9 0%, #ee2762 100%);
+    --bg-el: #5540d9;
     --color: white;
     --filter-all: invert(100%);
     --filter-bottom: invert(100%) drop-shadow(10px 10px 4px rgba(128, 128, 128, 0.7));
