@@ -14,8 +14,8 @@ body::-webkit-scrollbar {
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100vw;
     height: calc(100vh + 33px);
     z-index: -1;
@@ -34,9 +34,6 @@ body::-webkit-scrollbar {
     padding: 8.5px;
     background: var(--bg-el);
 }
-/*.borderus:hover {
-    transform: scale(1.01);
-}*/
 .shadowus {
     box-shadow: 20px 15px 15px rgba(182, 182, 182, 0.7);
     transition: all 0.5s ease-in-out;
@@ -49,12 +46,10 @@ body::-webkit-scrollbar {
 .left-button {
     border-width: 7px 7px 7px 7px;
     border-radius: 35px;
-    margin: -7px 0px -7px -7px;
 }
 .right-button {
     border-width: 7px 7px 7px 0px;
     border-radius: 0px 35px 35px 0px;
-    margin: -7px -7px -7px 0px;
 }
 .sokr_knopka {
     background-color: var(--bg-el);
@@ -64,7 +59,12 @@ body::-webkit-scrollbar {
     border-color: var(--color);
 }
 .sokr-container {
+    border: none;
+    box-shadow: inset 0 0 0 7px;
     padding: 0px;
+}
+.sokr-container:hover {
+    box-shadow: inset 0 0 0 7px;
 }
 .all-button {
     width:80px;
@@ -276,6 +276,7 @@ body.light {
 body.dark {
     --bg-main: black;
     --bg-el: #5540d9;
+    /*--bg-el: linear-gradient(90deg, #5540d9 0%, #ee2762 100%);*/
     --color: white;
     --filter-all: invert(100%);
     --filter-bottom: invert(100%) drop-shadow(10px 10px 4px rgba(128, 128, 128, 0.7));
