@@ -28,12 +28,29 @@
 </head>
 <body class="light">
     <div id="bg"></div>
-    <header class="borderus shapka">
+    <div class="center" id="contacts-center">
+        <div id="contacts-div" class="borderus">
+            <div id="close-contacts-button" onclick="close_contacts()">Закрыть</div>
+            <h1>Контакты</h1>
+            <h2>Telegram</h2>
+            <h2>Vkontakte</h2>
+        </div>
+    </div>
+
+    <header class="borderus shapka hoverus">
         <div id="shapka-vniz">
-            <label class="toggle">
-                <input type="checkbox">
-                <div class="toggler" onclick="squid_theme()"></div>
-            </label>
+            <h1 onclick="open_contacts()">Контакты</h1>
+            <h1>Github</h1>
+            <h1>Вход Регистрация</h1>
+            <div class="header-theme-container">
+                <p id="theme-z">Тема</p>
+                <span>Светлая</span>
+                <label class="toggle">
+                        <input type="checkbox">
+                        <div class="toggler" onclick="squid_theme()"></div>
+                </label>
+                <span>Тёмная</span>
+            </div>
         </div>
         <div class="header-line">
             <img class="header-line-img" src="sdvg\Menu.svg">

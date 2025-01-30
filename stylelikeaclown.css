@@ -4,9 +4,6 @@ body {
     color: var(--color);
     overflow-y: scroll;
 }
-body::-webkit-scrollbar {
-    display: none;
-}
 
 #bg {
     background-image: url('https://images.wallpaperscraft.com/image/single/paper_texture_cells_55327_1920x1080.jpg');
@@ -21,6 +18,7 @@ body::-webkit-scrollbar {
     z-index: -1;
     filter: var(--filter-all);
 }
+
 * {
     transition: background-color 1s;
     color: var(--color);
@@ -192,17 +190,20 @@ body::-webkit-scrollbar {
     margin: 0px;
 }
 .shapka {
-    margin-top: -33px;
+    margin-top: -290px;
     border-top-width: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     transition: 600ms ease-in-out;
 }
-.shapka:hover {
+.hoverus:hover {
     margin-top: 0px;
 }
 #shapka-vniz {
     text-align: center;
+}
+#shapka-vniz * {
+    cursor: pointer;
 }
 .header-line {
     display: flex;
@@ -213,6 +214,97 @@ body::-webkit-scrollbar {
     width: 48px;
     filter: var(--filter-all);
 }
+.header-theme-container {
+    margin-block-start: calc(0.67 * 32px);
+    margin-block-end: calc(0.67 * 32px);
+}
+.header-theme-container * {
+    vertical-align: middle;
+}
+.header-theme-container span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#theme-z {
+    font-size: 32px;
+    margin-block-start: 0;
+    margin-block-end: 17px;
+    font-weight: bold;
+}
+
+
+@keyframes contacts-center-anim {
+    to {
+        background: rgba(58, 58, 58, 0.205);
+        backdrop-filter: blur(10px);
+    }
+}
+@keyframes contacts-div-anim {
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes contacts-center-close {
+    from {
+        background: rgba(58, 58, 58, 0.205);
+        backdrop-filter: blur(10px);
+    }
+    to {
+        background: rgba(58, 58, 58, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+@keyframes contacts-div-close {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-600px);
+    }
+}
+
+
+
+.center {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    display: none;
+    background: rgba(58, 58, 58, 0);
+    backdrop-filter: blur(0px);
+}
+#contacts-div {
+    margin: auto;
+    padding: 20px 40px;
+    transform: translateY(-600px);
+    text-align: center;
+}
+#contacts-div :nth-child(2) {
+    margin-top: 0;
+}
+#close-contacts-button {
+    cursor: pointer;
+    padding: 10px;
+}
+
+#contacts-div.contacts-down {
+    animation: 600ms ease-out contacts-div-anim forwards;
+}
+#contacts-center.contacts-down {
+    animation: 1s contacts-center-anim forwards;
+    display: flex;
+}
+
+#contacts-div.contacts-close {
+    animation: 600ms contacts-div-close forwards;
+}
+#contacts-center.contacts-close {
+    animation: 1s ease-out contacts-center-close forwards;
+}
+
 #sent {
     width: 70px;
     background-image: url('sdvg/ArrowCircleRight24Filled.svg');
@@ -259,7 +351,6 @@ body::-webkit-scrollbar {
 .toggle input:checked+.toggler {
     background-color: #4caf50;
 }
-
 .toggle input:checked+.toggler::before {
     transform: translateX(26px);
 }

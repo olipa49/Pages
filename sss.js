@@ -46,6 +46,30 @@ function myFunction() {
 
 // Переключалка темы
 function squid_theme() {
-  document.querySelector("body").classList.toggle("light");
-  document.querySelector("body").classList.toggle("dark");
+    document.querySelector("body").classList.toggle("light");
+    document.querySelector("body").classList.toggle("dark");
+}
+
+
+function contacts_anim() {
+    document.querySelector("#contacts-div").classList.toggle("contacts-down")
+    document.querySelector("#contacts-center").classList.toggle("contacts-down")
+}
+function open_contacts() {
+  document.querySelector(".shapka").classList.toggle("hoverus");
+  setTimeout(contacts_anim, 600);
+}
+
+
+function contacts_anim_close() {
+    document.querySelector(".shapka").classList.toggle("hoverus");
+    document.querySelector("#contacts-div").classList.toggle("contacts-down")
+    document.querySelector("#contacts-center").classList.toggle("contacts-down")
+    document.querySelector("#contacts-div").classList.toggle("contacts-close")
+    document.querySelector("#contacts-center").classList.toggle("contacts-close")
+}
+function close_contacts() {
+    document.querySelector("#contacts-div").classList.toggle("contacts-close")
+    document.querySelector("#contacts-center").classList.toggle("contacts-close")
+    setTimeout(contacts_anim_close, 600);
 }
