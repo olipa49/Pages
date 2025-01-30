@@ -6,7 +6,7 @@ body {
 }
 
 #bg {
-    background-image: url('https://images.wallpaperscraft.com/image/single/paper_texture_cells_55327_1920x1080.jpg');
+    background-image: url('bgimg.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -372,4 +372,15 @@ body.dark {
     --filter-all: invert(100%);
     --filter-bottom: invert(100%) drop-shadow(10px 10px 4px rgba(128, 128, 128, 0.7));
     --filter-bottom-hov: invert(100%) drop-shadow(10px 10px 4px rgba(182, 182, 182, 0.7));
+}
+
+
+@media (max-width: 1070px) {
+    .main {
+        flex-direction: column;
+    }
+    .text {
+        width: auto;
+        height: 500px;
+    }
 }
