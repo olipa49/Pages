@@ -1,62 +1,62 @@
 async function query(data) {
-	const response = await fetch(
-		"https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
-		{
-			headers: {
-				Authorization: "Bearer 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",
-				"Content-Type": "application/json",
-			},
-			method: "POST",
-			body: JSON.stringify(data),
-		}
-	);
-	const result = await response.json();
-	return result;
+    const response = await fetch(
+        "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
+        {
+            headers: {
+                Authorization: "Bearer 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",
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify(data),
+        }
+    );
+    const result = await response.json();
+    return result;
 }
-function copyy(){ 
-    var text = document.getElementById("left"); 
-    text.select(); 
-    document.execCommand("copy"); 
-    document.getSelection().removeAllRanges(); 
+function copyy() {
+    var text = document.getElementById("left");
+    text.select();
+    document.execCommand("copy");
+    document.getSelection().removeAllRanges();
 }
-function copyy2(){ 
-    var text = document.getElementById("right"); 
-    text.select(); 
-    document.execCommand("copy"); 
-    document.getSelection().removeAllRanges(); 
+function copyy2() {
+    var text = document.getElementById("right");
+    text.select();
+    document.execCommand("copy");
+    document.getSelection().removeAllRanges();
 }
-function del(){ 
-    var val = document.getElementById("left"); 
-    val.value = ''; 
+function del() {
+    var val = document.getElementById("left");
+    val.value = '';
 }
 function apisokr() {
     var pole = document.getElementById("number").value;
     var val = document.getElementById("left").value;
-    var text = document.getElementById("right"); 
+    var text = document.getElementById("right");
     /*fetch(`http://localhost:8000/${pole}/${val}`, {mode: "no-cors"});*/
     /*query({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}).then((response) => {
         str = JSON.stringify(response)
         text.innerHTML = "" + str.slice(40 + val.length, -3);
     });*/
     var res = fetch(
-		"https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
-		{
-			headers: {
-				Authorization: "Bearer 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",
-				"Content-Type": "application/json",
-			},
-			method: "POST",
-			body: JSON.stringify({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}),
-		}
-	).then(res => res.json())
-    .then(data => data[0])
-    .then(dat => text.innerHTML = dat.generated_text);
+        "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
+        {
+            headers: {
+                Authorization: "Bearer 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",
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify({ "inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: ` }),
+        }
+    ).then(res => res.json())
+        .then(data => data[0])
+        .then(dat => text.innerHTML = dat.generated_text);
 }
 function apiper() {
 
 }
 function testfetch() {
-    
+
 }
 function sync1() {
     var pole = document.getElementById("number");
@@ -95,10 +95,10 @@ async function get_ip() {
     var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
     var ipi;
     await fetch("https://api.ipify.org?format=json")
-    .then(a => a.json())
-    .then(a => ipi = a.ip);
+        .then(a => a.json())
+        .then(a => ipi = a.ip);
     fetch(url_ip + "/ip/" + ipi, {
-        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true"}
+        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" }
     });
 }
 get_ip();

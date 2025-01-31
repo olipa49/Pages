@@ -23,7 +23,9 @@ body {
     transition: background-color 1s;
     color: var(--color);
 }
-
+.main {
+    padding-top: 100px;
+}
 
 .borderus {
     border-style: solid;
@@ -32,10 +34,12 @@ body {
     padding: 8.5px;
     background: var(--bg-el);
 }
+
 .shadowus {
     box-shadow: 20px 15px 15px rgba(182, 182, 182, 0.7);
     transition: all 0.5s ease-in-out;
 }
+
 .shadowus:hover {
     box-shadow: 20px 15px 15px rgba(128, 128, 128, 0.7);
     transition: all 0.5s ease-in-out;
@@ -45,10 +49,12 @@ body {
     border-width: 7px 7px 7px 7px;
     border-radius: 35px;
 }
+
 .right-button {
     border-width: 7px 7px 7px 0px;
     border-radius: 0px 35px 35px 0px;
 }
+
 .sokr_knopka {
     background-color: var(--bg-el);
     border-style: solid;
@@ -56,17 +62,20 @@ body {
     width: 100%;
     border-color: var(--color);
 }
+
 .sokr-container {
     border: none;
     box-shadow: inset 0 0 0 7px;
     padding: 0px;
 }
+
 .sokr-container:hover {
     box-shadow: inset 0 0 0 7px;
 }
+
 .all-button {
-    width:80px;
-    height:80px;
+    width: 80px;
+    height: 80px;
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -76,6 +85,7 @@ body {
     filter: var(--filter-bottom);
     transition: filter, margin-top 0.5s ease-in-out;
 }
+
 .all-button:hover {
     filter: var(--filter-bottom-hov);
     margin-top: -10px;
@@ -89,50 +99,65 @@ body {
 
 #button1 {
     background-image: url('sdvg/Speaker24Regular.svg');
-    
+
 }
+
 #button1:hover {
     background-image: url('sdvg/Speaker24Filled.svg');
 }
+
 #button2 {
     background-image: url('sdvg/Folder24Regular.svg');
 }
+
 #button2:hover {
     background-image: url('sdvg/Folder24Filled.svg');
 }
+
 #button3 {
     background-image: url('sdvg/SlideMicrophone24Regular.svg');
 }
+
 #button3:hover {
     background-image: url('sdvg/SlideMicrophone24Filled.svg');
 }
+
 #button4 {
     background-image: url('sdvg/XCircle.svg');
 }
+
 #button4:hover {
     background-image: url('sdvg/XCircle\ \(1\).svg');
 }
+
 #button5 {
     background-image: url('sdvg/Copy24Regular.svg');
 }
+
 #button5:hover {
     background-image: url('sdvg/Copy24Filled.svg');
 }
+
 #button6 {
     background-image: url('sdvg/Speaker24Regular.svg');
 }
+
 #button6:hover {
     background-image: url('sdvg/Speaker24Filled.svg');
 }
+
 #button7 {
     background-image: url('sdvg/Copy24Regular.svg');
 }
+
 #button7:hover {
     background-image: url('sdvg/Copy24Filled.svg');
 }
+
 #button8 {
     background-image: url('sdvg/Notepad24Regular.svg');
 }
+
 #button8:hover {
     background-image: url('sdvg/Notepad24Filled.svg');
 }
@@ -144,33 +169,41 @@ body {
     outline: 0;
     resize: none;
     font-size: 20px;
-    margin-top: 20px;
+    margin-block-start: 20px;
 }
+
 .text::placeholder {
     color: rgb(201, 201, 201);
 }
-.text::-webkit-scrollbar{
+
+.text::-webkit-scrollbar {
     width: 20px;
     cursor: default;
 }
-.text::-webkit-scrollbar-thumb{
+
+.text::-webkit-scrollbar-thumb {
     border-radius: 100px;
     border: 3px solid;
     cursor: default;
     background: var(--bg-el);
 }
-#left::-webkit-scrollbar-thumb{
+
+#left::-webkit-scrollbar-thumb {
     border-color: rgb(0, 223, 223);
 }
-#right::-webkit-scrollbar-thumb{
+
+#right::-webkit-scrollbar-thumb {
     border-color: limegreen;
 }
-#left{
+
+#left {
     border-color: aqua;
 }
-#right{
+
+#right {
     border-color: lawngreen;
 }
+
 #number {
     outline: 0;
     resize: none;
@@ -179,52 +212,68 @@ body {
     border-color: var(--color);
     cursor: default;
 }
+
 #range {
     width: 80%;
 }
+
 #range::-webkit-slider-thumb {
     cursor: pointer;
 }
+
 .hh {
     text-align: center;
     margin: 0px;
 }
+
 .shapka {
     margin-top: -290px;
     border-top-width: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     transition: 600ms ease-in-out;
+    position: fixed;
+    left: 2%;
+    right: 5%;
 }
+
 .hoverus:hover {
     margin-top: 0px;
 }
+
 #shapka-vniz {
     text-align: center;
 }
+
 #shapka-vniz * {
     cursor: pointer;
 }
+
 .header-line {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .header-line-img {
     width: 48px;
     filter: var(--filter-all);
 }
+
 .header-theme-container {
     margin-block-start: calc(0.67 * 32px);
     margin-block-end: calc(0.67 * 32px);
 }
+
 .header-theme-container * {
     vertical-align: middle;
 }
+
 .header-theme-container span {
     font-size: 1.5em;
     font-weight: bold;
 }
+
 #theme-z {
     font-size: 32px;
     margin-block-start: 0;
@@ -239,25 +288,30 @@ body {
         backdrop-filter: blur(10px);
     }
 }
+
 @keyframes contacts-div-anim {
     to {
         transform: translateY(0px);
     }
 }
+
 @keyframes contacts-center-close {
     from {
         background: rgba(58, 58, 58, 0.205);
         backdrop-filter: blur(10px);
     }
+
     to {
         background: rgba(58, 58, 58, 0);
         backdrop-filter: blur(0px);
     }
 }
+
 @keyframes contacts-div-close {
     from {
         transform: translateY(0px);
     }
+
     to {
         transform: translateY(-600px);
     }
@@ -276,15 +330,18 @@ body {
     background: rgba(58, 58, 58, 0);
     backdrop-filter: blur(0px);
 }
+
 #contacts-div {
     margin: auto;
     padding: 20px 40px;
     transform: translateY(-600px);
     text-align: center;
 }
+
 #contacts-div :nth-child(2) {
     margin-top: 0;
 }
+
 #close-contacts-button {
     cursor: pointer;
     padding: 10px;
@@ -293,6 +350,7 @@ body {
 #contacts-div.contacts-down {
     animation: 600ms ease-out contacts-div-anim forwards;
 }
+
 #contacts-center.contacts-down {
     animation: 1s contacts-center-anim forwards;
     display: flex;
@@ -301,6 +359,7 @@ body {
 #contacts-div.contacts-close {
     animation: 600ms contacts-div-close forwards;
 }
+
 #contacts-center.contacts-close {
     animation: 1s ease-out contacts-center-close forwards;
 }
@@ -325,9 +384,11 @@ body {
     height: 24px;
     text-align: center;
 }
+
 .toggle input {
     display: none;
 }
+
 .toggler {
     position: absolute;
     cursor: pointer;
@@ -337,6 +398,7 @@ body {
     height: 100%;
     transition: background-color 0.3s;
 }
+
 .toggler::before {
     content: "";
     position: absolute;
@@ -348,9 +410,11 @@ body {
     border-radius: 50%;
     transition: transform 0.3s;
 }
+
 .toggle input:checked+.toggler {
     background-color: #4caf50;
 }
+
 .toggle input:checked+.toggler::before {
     transform: translateX(26px);
 }
@@ -379,6 +443,7 @@ body.dark {
     .main {
         flex-direction: column;
     }
+
     .text {
         width: auto;
         height: 500px;

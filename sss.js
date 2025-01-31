@@ -3,24 +3,24 @@ set_mod1();
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-  
-  // Закрыть выпадающее меню, если пользователь щёлкает за его пределами
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
 
-  var neromodel;
+// Закрыть выпадающее меню, если пользователь щёлкает за его пределами
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+var neromodel;
 /* функция для выбора модели */
-  function set_mod1(){
+function set_mod1() {
     neromodel = 1;
     var circle1 = document.getElementById("cir1");
     circle1.style.background = "#7fee1dc4";
@@ -30,9 +30,9 @@ function myFunction() {
 
     var modelnameh2 = document.getElementById("modelname");
     modelnameh2.innerHTML = `Модель: ${neromodel}`;
-  }
+}
 
-  function set_mod2(){
+function set_mod2() {
     neromodel = 2;
     var circle1 = document.getElementById("cir1");
     circle1.style.background = "#ee2b1dc4";
@@ -42,7 +42,7 @@ function myFunction() {
 
     var modelnameh2 = document.getElementById("modelname");
     modelnameh2.innerHTML = `Модель: ${neromodel}`;
-  }
+}
 
 // Переключалка темы
 function squid_theme() {
@@ -56,8 +56,8 @@ function contacts_anim() {
     document.querySelector("#contacts-center").classList.toggle("contacts-down")
 }
 function open_contacts() {
-  document.querySelector(".shapka").classList.toggle("hoverus");
-  setTimeout(contacts_anim, 600);
+    document.querySelector(".shapka").classList.toggle("hoverus");
+    setTimeout(contacts_anim, 600);
 }
 
 

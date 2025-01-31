@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +14,27 @@
     <title>ИИ-ассистент</title>
 
 
-    <script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(99466752, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        ym(99466752, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
 </head>
+
 <body class="light">
     <div id="bg"></div>
     <div class="center" id="contacts-center">
@@ -49,8 +55,8 @@
                 <p id="theme-z">Тема</p>
                 <span>Светлая</span>
                 <label class="toggle">
-                        <input type="checkbox">
-                        <div class="toggler" onclick="squid_theme()"></div>
+                    <input type="checkbox">
+                    <div class="toggler" onclick="squid_theme()"></div>
                 </label>
                 <span>Тёмная</span>
             </div>
@@ -81,7 +87,8 @@
         <div class="column-container" id="middle">
             <div class="line-container shadowus middle-button borderus sokr-container">
                 <button class="left-button sokr_knopka">
-                    <h2>Сократить текст на <input oninput="sync1()" class="borderus" type="number" id="number" min=10 max=90 value="52" readonly>  %</h2><br>
+                    <h2>Сократить текст на <input oninput="sync1()" class="borderus" type="number" id="number" min=10
+                            max=90 value="52" readonly> %</h2><br>
                     <input oninput="sync2()" type="range" id="range" step="5" min=10 max=90 value="52">
                 </button>
 
@@ -90,15 +97,25 @@
             </div>
 
 
-            <button class="middle-button borderus shadowus" onclick="apiper()"><h2>Перефразировать</h2></button>
+            <button class="middle-button borderus shadowus" onclick="apiper()">
+                <h2>Перефразировать</h2>
+            </button>
             <div class="borderus shadowus">
                 <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction()"><h2 class="dropbtn" id="modelname">Выпадающий</h2></button>
+                    <button class="dropbtn" onclick="myFunction()">
+                        <h2 class="dropbtn" id="modelname">Выпадающий</h2>
+                    </button>
                     <div id="myDropdown" class="dropdown-content">
-                      <div class="mod" onclick="set_mod1()"><div class="circle" id="cir1"></div><h3 style="padding-inline: 10px;">MODEL1</h3></div>
-                      <div class="mod" onclick="set_mod2()"><div class="circle" id="cir2"></div><h3 style="padding-inline: 10px;">MODEL2</h3></div>
+                        <div class="mod" onclick="set_mod1()">
+                            <div class="circle" id="cir1"></div>
+                            <h3 style="padding-inline: 10px;">MODEL1</h3>
+                        </div>
+                        <div class="mod" onclick="set_mod2()">
+                            <div class="circle" id="cir2"></div>
+                            <h3 style="padding-inline: 10px;">MODEL2</h3>
+                        </div>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -116,4 +133,5 @@
     <script src="whatisjs.js"></script>
     <script src="sss.js"></script>
 </body>
+
 </html>
