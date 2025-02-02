@@ -1,5 +1,5 @@
 //Предварительная прогрузка картинок для кнопок
-var urls = ['sdvg/Speaker24Filled.svg', 'sdvg/Folder24Filled.svg', 'sdvg/SlideMicrophone24Filled.svg', 'sdvg/XCircle\ \(1\).svg', 'sdvg/Notepad24Filled.svg']
+var urls = ['sdvg/Speaker24Filled.svg', 'sdvg/Folder24Filled.svg', 'sdvg/SlideMicrophone24Filled.svg', 'sdvg/XCircle\ \(1\).svg', 'sdvg/Copy24Filled.svg', 'sdvg/Notepad24Filled.svg']
 for (var i = 0; i < urls.length; i++) {
     document.querySelector(`#pre${i + 1}`).style.background = `url('${urls[i]}')`
 }
