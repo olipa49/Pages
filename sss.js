@@ -65,8 +65,6 @@ function open_contacts() {
     document.querySelector(".shapka").classList.toggle("hoverus");
     setTimeout(contacts_anim, 600);
 }
-
-
 function contacts_anim_close() {
     document.querySelector(".shapka").classList.toggle("hoverus");
     document.querySelector("#contacts-div").classList.toggle("contacts-down")
@@ -78,4 +76,50 @@ function close_contacts() {
     document.querySelector("#contacts-div").classList.toggle("contacts-close")
     document.querySelector("#contacts-center").classList.toggle("contacts-close")
     setTimeout(contacts_anim_close, 600);
+}
+
+
+
+
+function auth_anim() {
+    document.querySelector("#auth-div").classList.toggle("auth-down")
+    document.querySelector("#auth-center").classList.toggle("auth-down")
+}
+function open_auth() {
+    document.querySelector(".shapka").classList.toggle("hoverus");
+    setTimeout(auth_anim, 600);
+}
+function auth_anim_close() {
+    document.querySelector(".shapka").classList.toggle("hoverus");
+    document.querySelector("#auth-div").classList.toggle("auth-down")
+    document.querySelector("#auth-center").classList.toggle("auth-down")
+    document.querySelector("#auth-div").classList.toggle("auth-close")
+    document.querySelector("#auth-center").classList.toggle("auth-close")
+}
+function close_auth() {
+    document.querySelector("#auth-div").classList.toggle("auth-close")
+    document.querySelector("#auth-center").classList.toggle("auth-close")
+    setTimeout(auth_anim_close, 600);
+}
+
+
+function guide_anim() {
+    document.querySelector("#guide-div").classList.toggle("guide-down")
+    document.querySelector("#guide-center").classList.toggle("guide-down")
+}
+function open_guide() {
+    document.querySelector(".shapka").classList.toggle("hoverus");
+    setTimeout(guide_anim, 600);
+}
+function guide_anim_close() {
+    document.querySelector(".shapka").classList.toggle("hoverus");
+    document.querySelector("#guide-div").classList.toggle("guide-down")
+    document.querySelector("#guide-center").classList.toggle("guide-down")
+    document.querySelector("#guide-div").classList.toggle("guide-close")
+    document.querySelector("#guide-center").classList.toggle("guide-close")
+}
+function close_guide() {
+    document.querySelector("#guide-div").classList.toggle("guide-close")
+    document.querySelector("#guide-center").classList.toggle("guide-close")
+    setTimeout(guide_anim_close, 600);
 }

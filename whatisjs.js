@@ -69,28 +69,45 @@ function sync2() {
     pole.value = polz.value;
 }
 
+
 let speechSynthesis = window.speechSynthesis;
 let utterance;
-
+var isSpeak1 = false;
+var isSpeak2 = false;
+utterance = new SpeechSynthesisUtterance();
+utterance.voice = speechSynthesis.getVoices().find(voice => voice.lang === "ru-RU" && voice.name.includes("Female"));
+utterance.lang = "ru-RU";
+utterance.pitch = 1; // Высота голоса
+utterance.rate = 2; // Скорость речи
+utterance.addEventListener("end", () => {isSpeak1 = false; isSpeak2 = false; console.log(1)})
 function speakText1() {
-    let text = document.getElementById("left").value;
-    utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = speechSynthesis.getVoices().find(voice => voice.lang === "ru-RU" && voice.name.includes("Female"));
-    utterance.lang = "ru-RU";
-    utterance.pitch = 1; // Высота голоса
-    utterance.rate = 2; // Скорость речи
-    speechSynthesis.speak(utterance);
+    window.speechSynthesis.cancel();
+    console.log(isSpeak1)
+    if (isSpeak1) {
+        isSpeak1 = false;
+    }
+    else {
+        isSpeak1 = true;
+        let text = document.getElementById("left").value;
+        utterance.text = text;
+        speechSynthesis.speak(utterance);
+    }
+}
+function speakText2() {
+    window.speechSynthesis.cancel();
+    console.log(isSpeak2)
+    if (isSpeak2) {
+        isSpeak2 = false;
+    }
+    else {
+        isSpeak2 = true;
+        let text = document.getElementById("right").value;
+        utterance.text = text;
+        speechSynthesis.speak(utterance);
+    }
 }
 
-function speakText2() {
-    let text = document.getElementById("right").value;
-    utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = speechSynthesis.getVoices().find(voice => voice.lang === "ru-RU" && voice.name.includes("Female"));
-    utterance.lang = "ru-RU";
-    utterance.pitch = 1; // Высота голоса
-    utterance.rate = 2; // Скорость речи
-    speechSynthesis.speak(utterance);
-}
+
 async function get_ip() {
     var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
     var ipi;
@@ -102,3 +119,36 @@ async function get_ip() {
     });
 }
 get_ip();
+
+
+let sostoanie = true;
+let area1 = document.getElementById('left');
+let area2 = document.getElementById('file');
+function files(){
+    if(sostoanie){
+        area1.style.display = 'none';
+        area2.style.display = 'flex';
+        sostoanie = false;
+    }
+    else{
+        area1.style.display = 'block';
+        area2.style.display = 'none';
+        sostoanie = true;
+    }
+}
+
+var fileinput = document.getElementById("fileinput");
+var confirm_button = document.getElementById("confirm_button");
+function fileokno() {
+    fileinput.click();
+}
+fileinput.addEventListener("change", offer_confirm);
+function offer_confirm() {
+    if (fileinput.files.length) {
+        confirm_button.style.display = 'block';
+        confirm_button.innerText += "\n" + fileinput.files[0].name;
+    }
+    else {
+        confirm_button.style.display = 'none';
+    }
+}

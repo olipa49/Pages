@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="stylelikeaclown.css">
     <link rel="stylesheet" href="containers.css">
     <link rel="stylesheet" href="boba.css">
+    <link rel="stylesheet" href="navy.css">
     <link rel="icon" href="1488.ico" type="image/x-icon">
     <title>ИИ-ассистент</title>
 
@@ -45,20 +46,52 @@
         <div id="pre6"></div>
     </div>
     <div id="bg"></div>
+
+
     <div class="center" id="contacts-center">
         <div id="contacts-div" class="borderus">
+            <!--vvv Тута контакты vvv-->
             <div id="close-contacts-button" onclick="close_contacts()">Закрыть</div>
             <h1>Контакты</h1>
             <h2>Telegram</h2>
             <h2>Vkontakte</h2>
+            <!--^^^ Тута контакты ^^^-->
         </div>
     </div>
-
+    <div class="center" id="auth-center">
+        <div id="auth-div" class="borderus">
+            <!--vvv Тута интефейс входа vvv-->
+            <div id="close-auth-button" onclick="close_auth()">Закрыть</div>
+            <h1>Войти</h1>
+            <h2>Telegram</h2>
+            <h2>Vkontakte</h2>
+            <!--^^^ До сюда ^^^-->
+        </div>
+    </div>
+    <div class="center" id="guide-center">
+        <div id="guide-div" class="borderus text" style="height: 70%; width: 60%; overflow-y: scroll;">
+            <!--vvv Вот это замени vvv-->
+            <div id="close-guide-button" onclick="close_guide()">Закрыть</div>
+            <h1>Войти</h1>
+            <h2>Telegram</h2>
+            <h2>Vkontakte</h2>
+            <h1>Войти</h1>
+            <h2>Telegram</h2>
+            <h2>Vkontakte</h2>
+            <h1>Войти</h1>
+            <h2>Telegram</h2>
+            <h2>Vkontakte</h2>
+            <h1>Войти</h1>
+            <h2>Telegram</h2>
+            <h2>Vkontakte</h2>
+            <!--^^^ Вот это замени ^^^-->
+        </div>
+    </div>
     <header class="borderus shapka hoverus">
         <div id="shapka-vniz">
             <h1 onclick="open_contacts()">Контакты</h1>
             <h1>Github</h1>
-            <h1>Вход Регистрация</h1>
+            <h1 onclick="open_auth()">Вход Регистрация</h1>
             <div class="header-theme-container">
                 <p id="theme-z">Тема</p>
                 <span>Светлая</span>
@@ -71,7 +104,7 @@
         </div>
         <div class="header-line">
             <img class="header-line-img" src="sdvg\Menu.svg">
-            <h1 class="hh">ИИ-ассистент для учёбы</h1>
+            <h1 class="hh">ИИ-ассистент для учёбы<button onclick="open_guide()">?</button></h1>
             <img class="header-line-img" src="sdvg\RoundLogin.svg">
         </div>
     </header>
@@ -81,9 +114,15 @@
     <div class="line-container main">
         <div class="column-container">
             <textarea class="text borderus shadowus" id="left" placeholder="Введите текст..."></textarea>
+            <div class="borderus checking_files shadowus" id="file"><img src="https://ssl.gstatic.com/translate/drag_and_drop.png" aria-hidden="true" class="photo" alt="">
+                <h2>Перетащите сюда файл</h2>
+                <h2 id="tipassilka" onclick="fileokno()"><u>или выберите с устройства</u></h2>
+                <input type="file" id="fileinput">
+                <button id="confirm_button">Отправить файл</button>
+            </div>
             <div class="button-container">
                 <div class="hover-btn-cont"><button class="all-button" id="button1" title="Озвучить текст" onclick="speakText1()"></button></div>
-                <div class="hover-btn-cont"><button class="all-button" id="button2" title="Выбрать файл" onclick=""></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button2" title="Выбрать файл" onclick="files()"></button></div>
                 <div class="hover-btn-cont"><button class="all-button" id="button3" title="Запись" onclick=""></button></div>
                 <div class="hover-btn-cont"><button class="all-button" id="button4" title="Удалить" onclick="del()"></button></div>
                 <div class="hover-btn-cont"><button class="all-button" id="button5" title="Копировать" onclick="copyy()"></button></div>
