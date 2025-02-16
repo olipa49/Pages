@@ -1,5 +1,5 @@
 //var url_ip = "http://127.0.0.1:8000";
-var url_ip = "http://127.0.0.1:8000";
+var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
 async function query(data) {
     const response = await fetch(
         "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
