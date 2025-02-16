@@ -1,3 +1,5 @@
+//var url_ip = "http://127.0.0.1:8000";
+var url_ip = "http://127.0.0.1:8000";
 async function query(data) {
     const response = await fetch(
         "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
@@ -38,6 +40,8 @@ function apisokr() {
         str = JSON.stringify(response)
         text.innerHTML = "" + str.slice(40 + val.length, -3);
     });*/
+    var t_str = `Суммаризируй следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `;
+    var len = t_str.length;
     var res = fetch(
         "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
         {
@@ -46,11 +50,11 @@ function apisokr() {
                 "Content-Type": "application/json",
             },
             method: "POST",
-            body: JSON.stringify({ "inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: ` }),
+            body: JSON.stringify({ "inputs": `Суммаризируй следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: ` }),
         }
     ).then(res => res.json())
         .then(data => data[0])
-        .then(dat => text.innerHTML = dat.generated_text);
+        .then(dat => text.innerHTML = dat.generated_text.slice(len + 1));
 }
 function apiper() {
 
@@ -107,9 +111,8 @@ function speakText2() {
     }
 }
 
-
+//var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
 async function get_ip() {
-    var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
     var ipi;
     await fetch("https://api.ipify.org?format=json")
         .then(a => a.json())
@@ -146,9 +149,19 @@ fileinput.addEventListener("change", offer_confirm);
 function offer_confirm() {
     if (fileinput.files.length) {
         confirm_button.style.display = 'block';
-        confirm_button.innerText += "\n" + fileinput.files[0].name;
+        confirm_button.innerText = "Отправить файл\n" + fileinput.files[0].name;
     }
     else {
         confirm_button.style.display = 'none';
     }
+}
+
+function uploadwav() {
+    var form = new FormData();
+    form.append('file', fileinput.files[0]);
+    fetch(url_ip + "/wav", {
+        headers: {"ngrok-skip-browser-warning": "true" },
+        method: 'POST',
+        body: form
+    });
 }

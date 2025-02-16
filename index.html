@@ -117,8 +117,8 @@
             <div class="borderus checking_files shadowus" id="file"><img src="https://ssl.gstatic.com/translate/drag_and_drop.png" aria-hidden="true" class="photo" alt="">
                 <h2>Перетащите сюда файл</h2>
                 <h2 id="tipassilka" onclick="fileokno()"><u>или выберите с устройства</u></h2>
-                <input type="file" id="fileinput">
-                <button id="confirm_button">Отправить файл</button>
+                <input type="file" id="fileinput" accept=".wav">
+                <button id="confirm_button" onclick="uploadwav()">Отправить файл</button>
             </div>
             <div class="button-container">
                 <div class="hover-btn-cont"><button class="all-button" id="button1" title="Озвучить текст" onclick="speakText1()"></button></div>
