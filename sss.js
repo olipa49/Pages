@@ -6,6 +6,7 @@ for (var i = 0; i < urls.length; i++) {
 
 set_mod1();
 history();
+theme_onload();
 /* Когда пользователь нажимает на кнопку, переключение между скрытием и отображением раскрывающегося содержимого */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -51,10 +52,24 @@ function set_mod2() {
     modelnameh2.innerHTML = `Модель: ${neromodel}`;
 }
 
+function theme_onload() {
+    if ("theme" in window.localStorage) {
+        if (window.localStorage.getItem("theme") == "dark") {
+            document.querySelector("body").classList.toggle("light");
+            document.querySelector("body").classList.toggle("dark");
+            document.getElementById("theme_input").checked = true;
+        }
+    }
+    else {
+        window.localStorage.setItem("theme", "light");
+    }
+}
 // Переключалка темы
 function squid_theme() {
     document.querySelector("body").classList.toggle("light");
     document.querySelector("body").classList.toggle("dark");
+    if (window.localStorage.getItem("theme") == "dark") window.localStorage.setItem("theme", "light");
+    else window.localStorage.setItem("theme", "dark");
 }
 
 

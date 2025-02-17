@@ -84,7 +84,7 @@ utterance.voice = speechSynthesis.getVoices().find(voice => voice.lang === "ru-R
 utterance.lang = "ru-RU";
 utterance.pitch = 1; // Высота голоса
 utterance.rate = 2; // Скорость речи
-utterance.addEventListener("end", () => {isSpeak1 = false; isSpeak2 = false; console.log(1)})
+utterance.addEventListener("end", () => { isSpeak1 = false; isSpeak2 = false; console.log(1) })
 function speakText1() {
     window.speechSynthesis.cancel();
     console.log(isSpeak1)
@@ -128,13 +128,13 @@ get_ip();
 let sostoanie = true;
 let area1 = document.getElementById('left');
 let area2 = document.getElementById('file');
-function files(){
-    if(sostoanie){
+function files() {
+    if (sostoanie) {
         area1.style.display = 'none';
         area2.style.display = 'flex';
         sostoanie = false;
     }
-    else{
+    else {
         area1.style.display = 'block';
         area2.style.display = 'none';
         sostoanie = true;
@@ -179,7 +179,7 @@ function history() {
     var div = document.getElementById("history");
     div.innerHTML = "";
     for (var i = Number(window.localStorage.getItem('count')) - 1; i >= 0; i--) {
-        div.innerHTML += '<p class="borderus article">' + window.localStorage.getItem(i) + "</p";
+        div.innerHTML += '<button class="borderus article active shadowus middle-button" onclick="history_paste(this)"><img src="sdvg/Edit16Filled.svg">' + window.localStorage.getItem(i) + "</button";
     }
 }
 function update_storage(text) {
@@ -191,4 +191,12 @@ function update_storage(text) {
 function history_clear() {
     localStorage.clear()
     history();
+}
+function history_paste(el) {
+    var val = document.getElementById("left");
+    val.value = el.innerText;
+}
+
+function random_text() {
+    document.getElementById("left").value = texts[Math.floor((Math.random() * texts.length))];
 }

@@ -58,6 +58,16 @@
     margin-block-end: 17px;
     font-weight: bold;
 }
+#name {
+    display: flex;
+    flex-direction: row;
+}
+#title_image {
+    width: 32px;
+    cursor: pointer;
+    filter: var(--filter-all);
+}
+
 .center {
     position: fixed;
     height: 100vh;

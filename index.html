@@ -96,7 +96,7 @@
                 <p id="theme-z">Тема</p>
                 <span>Светлая</span>
                 <label class="toggle">
-                    <input type="checkbox">
+                    <input type="checkbox" id="theme_input">
                     <div class="toggler" onclick="squid_theme()"></div>
                 </label>
                 <span>Тёмная</span>
@@ -104,7 +104,10 @@
         </div>
         <div class="header-line">
             <img class="header-line-img" src="sdvg\Menu.svg">
-            <h1 class="hh">ИИ-ассистент для учёбы<button onclick="open_guide()">?</button></h1>
+            <div id="name">
+                <h1 class="hh">ИИ-ассистент для учёбы</h1>
+                <img id="title_image" src="sdvg/QuestionCircleOutlined.svg" onclick="open_guide()">
+            </div>
             <img class="header-line-img" src="sdvg\RoundLogin.svg">
         </div>
     </header>
@@ -114,18 +117,24 @@
     <div class="line-container main">
         <div class="column-container">
             <textarea class="text borderus shadowus" id="left" placeholder="Введите текст..."></textarea>
-            <div class="borderus checking_files shadowus" id="file"><img src="https://ssl.gstatic.com/translate/drag_and_drop.png" aria-hidden="true" class="photo" alt="">
+            <div class="borderus checking_files shadowus" id="file"><img
+                    src="https://ssl.gstatic.com/translate/drag_and_drop.png" aria-hidden="true" class="photo" alt="">
                 <h2>Перетащите сюда файл</h2>
                 <h2 id="tipassilka" onclick="fileokno()"><u>или выберите с устройства</u></h2>
                 <input type="file" id="fileinput" accept=".wav">
                 <button id="confirm_button" onclick="uploadwav()">Отправить файл</button>
             </div>
             <div class="button-container">
-                <div class="hover-btn-cont"><button class="all-button" id="button1" title="Озвучить текст" onclick="speakText1()"></button></div>
-                <div class="hover-btn-cont"><button class="all-button" id="button2" title="Выбрать файл" onclick="files()"></button></div>
-                <div class="hover-btn-cont"><button class="all-button" id="button3" title="Запись" onclick=""></button></div>
-                <div class="hover-btn-cont"><button class="all-button" id="button4" title="Удалить" onclick="del()"></button></div>
-                <div class="hover-btn-cont"><button class="all-button" id="button5" title="Копировать" onclick="copyy()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button1" title="Озвучить текст"
+                        onclick="speakText1()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button2" title="Выбрать файл"
+                        onclick="files()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button3" title="Случайный текст"
+                        onclick="random_text()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button4" title="Удалить"
+                        onclick="del()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button5" title="Копировать"
+                        onclick="copyy()"></button></div>
             </div>
         </div>
 
@@ -171,21 +180,25 @@
         <div class="column-container">
             <textarea class="text borderus shadowus" id="right" readonly placeholder="Ответ ИИ..."></textarea>
             <div class="button-container">
-                <div class="hover-btn-cont"><button class="all-button" id="button7" title="Копировать" onclick="copyy2()"></button></div>
-                <div class="hover-btn-cont"><button class="all-button" id="button6" title="Озвучить текст" onclick="speakText2()"></button></div>
-                <div class="hover-btn-cont"><button class="all-button" id="button8" title="Шпаргалка" onclick=""></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button7" title="Копировать"
+                        onclick="copyy2()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button6" title="Озвучить текст"
+                        onclick="speakText2()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button8" title="Шпаргалка"
+                        onclick=""></button></div>
             </div>
         </div>
     </div>
     <div class="history_container">
         <h1>История запросов</h1>
-        <div>
-            <button onclick="history()" class="borderus shadowus active"><h1>Обновить</h1></button>
-            <button onclick="history_clear()" class="borderus shadowus active"><h1>Очистить</h1></button>
-        </div>
+        <button onclick="history_clear()" class="borderus active shadowus middle-button">
+            <h1>Очистить</h1>
+        </button>
         <div id="history"></div>
     </div>
     <script src="whatisjs.js"></script>
     <script src="sss.js"></script>
+    <script src="random_text.js"></script>
 </body>
+
 </html>

@@ -1,7 +1,8 @@
 @font-face {
     font-family: "Vor";
-    src: url('Bonvalet-Regular.otf');
+    src: url('VKSansDisplay-Bold.ttf');
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px 5% 0px 2%;
@@ -23,6 +24,7 @@ body {
     z-index: -1;
     filter: var(--filter-all);
 }
+
 #preload {
     visibility: hidden;
     background: url('sdvg/Speaker24Filled.svg');
@@ -33,6 +35,7 @@ body {
     /*font-family: 'Vor';*/
     color: var(--color);
 }
+
 .main {
     padding-top: 100px;
 }
@@ -93,13 +96,14 @@ body {
 
 .sokr-container {
     border: none;
-    box-shadow: inset 0 0 0 7px;
+    box-shadow: inset 0 0 0 7px, 20px 15px 15px rgba(182, 182, 182, 0.7);
     padding: 0px;
 }
 
 .sokr-container:hover {
-    box-shadow: inset 0 0 0 7px;
+    box-shadow: inset 0 0 0 7px, 20px 15px 15px rgba(128, 128, 128, 0.7);
 }
+
 .all-button {
     width: 80px;
     height: 80px;
@@ -142,11 +146,11 @@ body {
 }
 
 #button3 {
-    background-image: url('sdvg/SlideMicrophone24Regular.svg');
+    background-image: url('sdvg/PerspectiveDiceSixFacesRandom.svg');
 }
 
 .hover-btn-cont:hover #button3 {
-    background-image: url('sdvg/SlideMicrophone24Filled.svg');
+    background-image: url('sdvg/PerspectiveDiceSixFacesRandom.svg');
 }
 
 #button4 {
@@ -198,12 +202,15 @@ body {
     font-size: 20px;
     margin-block-start: 20px;
 }
+
 #tipassilka {
     cursor: pointer;
 }
+
 #fileinput {
     display: none;
 }
+
 #confirm_button {
     display: none;
 }
@@ -317,22 +324,38 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.history_container>button {
+    cursor: pointer;
+}
+
 #history {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, auto);
+    margin: 20px;
 }
+
 .article {
     padding: 20px;
     overflow-wrap: anywhere;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .active {
     transition: box-shadow 0.5s ease-in-out, transform .2s !important;
 }
+
 .active:active {
     transform: translateY(5px);
 }
+
+.history_button_container {
+    display: flex;
+}
+
 
 body.light {
     --bg-main: white;
@@ -359,10 +382,12 @@ body.dark {
         flex-direction: column;
     }
 
-    .text, .checking_files {
+    .text,
+    .checking_files {
         width: auto;
         height: 500px;
     }
+
     #history {
         grid-template-columns: auto;
     }
