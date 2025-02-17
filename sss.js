@@ -5,6 +5,7 @@ for (var i = 0; i < urls.length; i++) {
 }
 
 set_mod1();
+history();
 /* Когда пользователь нажимает на кнопку, переключение между скрытием и отображением раскрывающегося содержимого */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");

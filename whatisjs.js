@@ -1,5 +1,5 @@
-//var url_ip = "http://127.0.0.1:8000";
-var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
+var url_ip = "http://127.0.0.1:8000";
+//var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
 async function query(data) {
     const response = await fetch(
         "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
@@ -34,6 +34,7 @@ function del() {
 function apisokr() {
     var pole = document.getElementById("number").value;
     var val = document.getElementById("left").value;
+    update_storage(val);
     var text = document.getElementById("right");
     /*fetch(`http://localhost:8000/${pole}/${val}`, {mode: "no-cors"});*/
     /*query({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}).then((response) => {
@@ -157,11 +158,37 @@ function offer_confirm() {
 }
 
 function uploadwav() {
-    var form = new FormData();
+    /*var form = new FormData();
     form.append('file', fileinput.files[0]);
-    fetch(url_ip + "/wav", {
+    fetch(url_ip + "/wav/", {
         headers: {"ngrok-skip-browser-warning": "true" },
         method: 'POST',
         body: form
-    });
+    });*/
+    var reader = new FileReader();
+    reader.onload = () => {
+        var raw = reader.result;
+        fetch(url_ip + "/wav/" + raw, {
+            headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" }
+        })
+    }
+    reader.readAsText(fileinput.files[0]);
+}
+
+function history() {
+    var div = document.getElementById("history");
+    div.innerHTML = "";
+    for (var i = Number(window.localStorage.getItem('count')) - 1; i >= 0; i--) {
+        div.innerHTML += '<p class="borderus article">' + window.localStorage.getItem(i) + "</p";
+    }
+}
+function update_storage(text) {
+    var count = Number(window.localStorage.getItem('count'));
+    window.localStorage.setItem('count', count + 1);
+    window.localStorage.setItem(count, text);
+    history();
+}
+function history_clear() {
+    localStorage.clear()
+    history();
 }

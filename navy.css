@@ -244,14 +244,14 @@
     }
 
     to {
-        transform: translateY(-600px);
+        transform: translateY(-1300px);
     }
 }
 
 #guide-div {
     margin: auto;
     padding: 20px 40px;
-    transform: translateY(-600px);
+    transform: translateY(-1300px);
     text-align: center;
 }
 

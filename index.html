@@ -144,7 +144,7 @@
             </div>
 
 
-            <button class="middle-button borderus shadowus" onclick="apiper()">
+            <button class="middle-button borderus shadowus active" onclick="apiper()">
                 <h2>Перефразировать</h2>
             </button>
             <div class="borderus shadowus">
@@ -177,8 +177,15 @@
             </div>
         </div>
     </div>
+    <div class="history_container">
+        <h1>История запросов</h1>
+        <div>
+            <button onclick="history()" class="borderus shadowus active"><h1>Обновить</h1></button>
+            <button onclick="history_clear()" class="borderus shadowus active"><h1>Очистить</h1></button>
+        </div>
+        <div id="history"></div>
+    </div>
     <script src="whatisjs.js"></script>
     <script src="sss.js"></script>
 </body>
-
 </html>
