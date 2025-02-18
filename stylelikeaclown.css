@@ -318,6 +318,9 @@ body {
 .toggle input:checked+.toggler::before {
     transform: translateX(26px);
 }
+li {
+    text-align: left;
+}
 
 .history_container {
     display: flex;

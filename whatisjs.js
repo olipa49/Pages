@@ -189,14 +189,22 @@ function update_storage(text) {
     history();
 }
 function history_clear() {
-    localStorage.clear()
+    var theme = window.localStorage.getItem("theme");
+    localStorage.clear();
+    window.localStorage.setItem("theme", theme);
+    window.localStorage.setItem("guide", "yes");
     history();
 }
 function history_paste(el) {
     var val = document.getElementById("left");
     val.value = el.innerText;
 }
-
 function random_text() {
     document.getElementById("left").value = texts[Math.floor((Math.random() * texts.length))];
+}
+function question_onload() {
+    if (!("guide" in window.localStorage)) {
+        document.getElementById("title_image").click();
+        window.localStorage.setItem("guide", "yes");
+    }
 }
