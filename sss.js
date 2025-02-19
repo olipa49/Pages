@@ -140,3 +140,10 @@ function close_guide() {
     document.querySelector("#guide-center").classList.toggle("guide-close")
     setTimeout(guide_anim_close, 600);
 }
+
+function passwording() {
+    let tip = document.getElementById("password");
+    let show = document.getElementById("shownes");
+    if(tip.type == "password") {tip.type = "none"; show.src="sdvg/Eye.svg"}
+    else {tip.type = "password"; show.src="sdvg/EyeClosed.svg"};
+}

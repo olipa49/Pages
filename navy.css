@@ -58,10 +58,12 @@
     margin-block-end: 17px;
     font-weight: bold;
 }
+
 #name {
     display: flex;
     flex-direction: row;
 }
+
 #title_image {
     width: 32px;
     cursor: pointer;
@@ -184,15 +186,16 @@
     }
 
     to {
-        transform: translateY(-600px);
+        transform: translateY(-1600px);
     }
 }
 
 #auth-div {
     margin: auto;
     padding: 20px 40px;
-    transform: translateY(-600px);
+    transform: translateY(-1600px);
     text-align: center;
+    width: 50%;
 }
 
 #auth-div :nth-child(2) {

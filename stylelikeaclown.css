@@ -66,6 +66,16 @@ body {
     width: 280px;
 }
 
+.kontakts {
+    display: flex;
+    align-items: center;
+}
+
+.vhod:focus-visible {
+    border-color: black;
+    outline: none;
+}
+
 .shadowus {
     box-shadow: 20px 15px 15px rgba(182, 182, 182, 0.7);
     transition: all 0.5s ease-in-out;
@@ -318,8 +328,17 @@ body {
 .toggle input:checked+.toggler::before {
     transform: translateX(26px);
 }
+
 li {
     text-align: left;
+}
+
+input[type=email] {
+    width: 70%;
+}
+
+#password {
+    width: calc(70% - 24px);
 }
 
 .history_container {
