@@ -35,7 +35,6 @@
         <div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div>
     </noscript>
 </head>
-
 <body class="light">
     <div id="preload">
         <div id="pre1"></div>
@@ -181,7 +180,7 @@
             </div>
 
 
-            <button class="middle-button borderus shadowus active" onclick="apiper()">
+            <button id="perefrazirovatt" class="middle-button borderus shadowus active" onclick="apiper()">
                 <h2>Перефразировать</h2>
             </button>
             <div class="borderus shadowus">
@@ -192,11 +191,11 @@
                     <div id="myDropdown" class="dropdown-content">
                         <div class="mod" onclick="set_mod1()">
                             <div class="circle" id="cir1"></div>
-                            <h3 style="padding-inline: 10px;">MODEL1</h3>
+                            <h3 style="padding-inline: 10px;">QwQ-32B-Preview</h3>
                         </div>
                         <div class="mod" onclick="set_mod2()">
                             <div class="circle" id="cir2"></div>
-                            <h3 style="padding-inline: 10px;">MODEL2</h3>
+                            <h3 style="padding-inline: 10px;">Qwen2.5-0.5B</h3>
                         </div>
                     </div>
                 </div>
@@ -222,7 +221,14 @@
         <button onclick="history_clear()" class="borderus active shadowus middle-button">
             <h1>Очистить</h1>
         </button>
-        <div id="history"></div>
+        <div id="history">
+            <div class="article active shadowus middle-button borderus" onclick="history_paste(this)">
+                <img src="sdvg/Edit16Filled.svg">
+                Иметь семью и детей так же необходимо и естественно, как необходимо и естественно трудиться. Семья издавна скреплялась нравственным авторитетом отца, который традиционно считался главой. Отца дети уважали и слушались. Он занимался сельхозработами, строительством, заготовкой леса и дров. Всю тяжесть крестьянского труда с ним разделяли взрослые сыновья. Руководство домашним хозяйством было в руках жены и матери. Она ведала всем в доме: присматривала за скотом, заботилась о питании, об одежде. Все эти работы она делала не одна: даже дети, едва научившись ходить, понемногу, вместе с игрой, начинали делать что-то полезное. Доброта, терпимость, взаимное прощение обид перерастали в хорошей семье во взаимную любовь. Сварливость и неуживчивость считались наказанием судьбы и вызывали жалость к их носителям. Надо было уметь уступить, забыть обиду, ответить добром или промолчать. Любовь и согласие между родственниками давали начало любви за пределами дома. От человека, не любящего и не уважающего своих родных, трудно ждать уважения к другим людям.
+                <div class="shadow-down"></div>
+                <button class="history_down_btn" onclick="history_down(this)"></button>
+            </div>
+        </div>
     </div>
     <script src="whatisjs.js"></script>
     <script src="sss.js"></script>

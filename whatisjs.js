@@ -31,7 +31,8 @@ function del() {
     var val = document.getElementById("left");
     val.value = '';
 }
-function apisokr() {
+
+function cend(t_str) {
     var pole = document.getElementById("number").value;
     var val = document.getElementById("left").value;
     update_storage(val);
@@ -41,28 +42,28 @@ function apisokr() {
         str = JSON.stringify(response)
         text.innerHTML = "" + str.slice(40 + val.length, -3);
     });*/
-    var t_str = `Суммаризируй следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `;
     var len = t_str.length;
     var res = fetch(
-        "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
+        neromodel,
         {
             headers: {
                 Authorization: "Bearer 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",
                 "Content-Type": "application/json",
             },
             method: "POST",
-            body: JSON.stringify({ "inputs": `Суммаризируй следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: ` }),
+            body: JSON.stringify({ "inputs": t_str}),
         }
     ).then(res => res.json())
         .then(data => data[0])
         .then(dat => text.innerHTML = dat.generated_text.slice(len + 1));
 }
+function apisokr() {
+    cend(`Суммаризируй следующий текст на ${document.getElementById("number").value} процентов:\n${document.getElementById("left").value}. \n Сокращённый текст на русском языке: `);
+}
 function apiper() {
-
+    cend(`Перефразируй следующий текст :\n${document.getElementById("left").value}. \n Перефразированный текст на русском языке: `);
 }
-function testfetch() {
 
-}
 function sync1() {
     var pole = document.getElementById("number");
     var polz = document.getElementById("range");
@@ -177,9 +178,9 @@ function uploadwav() {
 
 function history() {
     var div = document.getElementById("history");
-    div.innerHTML = "";
+    //div.innerHTML = "";
     for (var i = Number(window.localStorage.getItem('count')) - 1; i >= 0; i--) {
-        div.innerHTML += '<button class="borderus article active shadowus middle-button" onclick="history_paste(this)"><img src="sdvg/Edit16Filled.svg">' + window.localStorage.getItem(i) + "</button";
+        div.innerHTML += '<div class="borderus article active shadowus middle-button" onclick="history_paste(this)"><img src="sdvg/Edit16Filled.svg">' + window.localStorage.getItem(i) + "</div";
     }
 }
 function update_storage(text) {
@@ -194,6 +195,11 @@ function history_clear() {
     window.localStorage.setItem("theme", theme);
     window.localStorage.setItem("guide", "yes");
     history();
+}
+function history_down(el) {
+    var parent = el.parentNode;
+    parent.classList.add('show_p');
+    document.querySelectorAll('.shadow-down, .history_down_btn').forEach(function(elem) {elem.remove()})
 }
 function history_paste(el) {
     var val = document.getElementById("left");

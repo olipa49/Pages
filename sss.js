@@ -27,10 +27,10 @@ window.onclick = function (event) {
     }
 }
 
-var neromodel;
+var neromodel = "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview";
 /* функция для выбора модели */
 function set_mod1() {
-    neromodel = 1;
+    neromodel = "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview";
     var circle1 = document.getElementById("cir1");
     circle1.style.background = "#7fee1dc4";
     var circle2 = document.getElementById("cir2");
@@ -38,11 +38,11 @@ function set_mod1() {
     console.log(neromodel);
 
     var modelnameh2 = document.getElementById("modelname");
-    modelnameh2.innerHTML = `Модель: ${neromodel}`;
+    modelnameh2.innerHTML = `Модель: QwQ-32B-Preview`;
 }
 
 function set_mod2() {
-    neromodel = 2;
+    neromodel = "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-0.5B";
     var circle1 = document.getElementById("cir1");
     circle1.style.background = "#ee2b1dc4";
     var circle2 = document.getElementById("cir2");
@@ -50,7 +50,7 @@ function set_mod2() {
     console.log(neromodel);
 
     var modelnameh2 = document.getElementById("modelname");
-    modelnameh2.innerHTML = `Модель: ${neromodel}`;
+    modelnameh2.innerHTML = `Модель: Qwen2.5-0.5B`;
 }
 
 function theme_onload() {
