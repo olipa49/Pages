@@ -1,35 +1,32 @@
 var url_ip = "http://127.0.0.1:8000";
 //var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
-async function query(data) {
-    const response = await fetch(
-        "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview",
-        {
-            headers: {
-                Authorization: "Bearer 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",
-                "Content-Type": "application/json",
-            },
-            method: "POST",
-            body: JSON.stringify(data),
-        }
-    );
-    const result = await response.json();
-    return result;
-}
 function copyy() {
     var text = document.getElementById("left");
     text.select();
     document.execCommand("copy");
     document.getSelection().removeAllRanges();
+    var alert = document.getElementById('alert');
+    alert.querySelector('*').innerText = "Скопировано";
+    alert.style.display = 'block';
+    setTimeout(() => alert.style.display = 'none', 2000)
 }
 function copyy2() {
     var text = document.getElementById("right");
     text.select();
     document.execCommand("copy");
     document.getSelection().removeAllRanges();
+    var alert = document.getElementById('alert');
+    alert.querySelector('*').innerText = "Скопировано";
+    alert.style.display = 'block';
+    setTimeout(() => alert.style.display = 'none', 2000)
 }
 function del() {
     var val = document.getElementById("left");
     val.value = '';
+    var alert = document.getElementById('alert');
+    alert.querySelector('*').innerText = "Очищено";
+    alert.style.display = 'block';
+    setTimeout(() => alert.style.display = 'none', 2000)
 }
 
 function cend(t_str) {
@@ -37,25 +34,38 @@ function cend(t_str) {
     var val = document.getElementById("left").value;
     update_storage(val);
     var text = document.getElementById("right");
+
+    var alert = document.getElementById('alert');
+    alert.querySelector('*').innerText = "Отправлено";
+    alert.style.display = 'block';
+    setTimeout(() => alert.style.display = 'none', 2000)
+    
     /*fetch(`http://localhost:8000/${pole}/${val}`, {mode: "no-cors"});*/
     /*query({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}).then((response) => {
         str = JSON.stringify(response)
         text.innerHTML = "" + str.slice(40 + val.length, -3);
     });*/
     var len = t_str.length;
-    var res = fetch(
-        neromodel,
-        {
-            headers: {
-                Authorization: "Bearer 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",
-                "Content-Type": "application/json",
-            },
-            method: "POST",
-            body: JSON.stringify({ "inputs": t_str}),
-        }
-    ).then(res => res.json())
+        var res = fetch(
+            neromodel,
+            {
+                headers: {
+                    Authorization: "Bearer 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",
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({ "inputs": t_str}),
+            }
+    ).then(res => {if (!response.ok) {
+        throw new Error('Error occurred!')
+      } res.json()})
         .then(data => data[0])
-        .then(dat => text.innerHTML = dat.generated_text.slice(len + 1));
+        .then(dat => text.innerHTML = dat.generated_text.slice(len + 1)).catch((err) => {
+            var alert = document.getElementById('alert');
+        alert.querySelector('*').innerText = 'Повторите запрос ещё раз или используйте другую модель\n' + err;
+        alert.style.display = 'block';
+        setTimeout(() => alert.style.display = 'none', 2000)
+        });
 }
 function apisokr() {
     cend(`Суммаризируй следующий текст на ${document.getElementById("number").value} процентов:\n${document.getElementById("left").value}. \n Сокращённый текст на русском языке: `);
@@ -173,14 +183,25 @@ function uploadwav() {
             headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" }
         })
     }
+    var alert = document.getElementById('alert');
+    alert.querySelector('*').innerText = "Отправка файла...";
+    alert.style.display = 'block';
+    setTimeout(() => alert.style.display = 'none', 2000)
     reader.readAsText(fileinput.files[0]);
 }
 
 function history() {
     var div = document.getElementById("history");
-    //div.innerHTML = "";
+    div.innerHTML = "";
     for (var i = Number(window.localStorage.getItem('count')) - 1; i >= 0; i--) {
-        div.innerHTML += '<div class="borderus article active shadowus middle-button" onclick="history_paste(this)"><img src="sdvg/Edit16Filled.svg">' + window.localStorage.getItem(i) + "</div";
+        div.innerHTML += '<div class="borderus article active shadowus middle-button" onclick="history_paste(event)"><img src="sdvg/Edit16Filled.svg"><span>' + window.localStorage.getItem(i) + "</span></div";
+    }
+    var articles = div.querySelectorAll('.article');
+    for (var i = 0; i < Number(window.localStorage.getItem('count')); i++) {
+        if (articles[i].querySelector('span').offsetHeight > 380) {
+            articles[i].innerHTML = articles[i].innerHTML + `<div class="shadow-down"></div>
+                <button class="history_down_btn" onclick="history_down(this)"></button>`;
+        }
     }
 }
 function update_storage(text) {
@@ -199,11 +220,17 @@ function history_clear() {
 function history_down(el) {
     var parent = el.parentNode;
     parent.classList.add('show_p');
-    document.querySelectorAll('.shadow-down, .history_down_btn').forEach(function(elem) {elem.remove()})
+    parent.querySelectorAll('.shadow-down, .history_down_btn').forEach(function(elem) {elem.remove()})
 }
 function history_paste(el) {
-    var val = document.getElementById("left");
-    val.value = el.innerText;
+    if (el.target.matches('span')) {
+        var val = document.getElementById("left");
+        val.value = el.target.innerText;
+    }
+    var alert = document.getElementById('alert');
+    alert.querySelector('*').innerText = "Вставено в поле";
+    alert.style.display = 'block';
+    setTimeout(() => alert.style.display = 'none', 2000)
 }
 function random_text() {
     document.getElementById("left").value = texts[Math.floor((Math.random() * texts.length))];

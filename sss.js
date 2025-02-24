@@ -8,6 +8,7 @@ set_mod1();
 history();
 theme_onload();
 question_onload();
+window.addEventListener('resize', history);
 /* Когда пользователь нажимает на кнопку, переключение между скрытием и отображением раскрывающегося содержимого */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
